@@ -26,7 +26,7 @@ template<class T>struct Mo{
 			mx = max(mx,cnt[v[pos]]);
 		};
 		sort(all(q),[&](qry a,qry b){
-			static int B = n/max((T)sqrt(m),(T)1);
+			static int B = max((int)1,n/max((int)sqrt(m),(int)1));
 			if(a.ql/B!=b.ql/B)return a.ql<b.ql;
 			if((a.ql/B)&1)return a.qr>b.qr;
 			return a.qr<b.qr;
