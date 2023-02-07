@@ -27,9 +27,9 @@ template<class T>struct Mo{
 		};
 		sort(all(q),[&](qry a,qry b){
 			static int B = n/max((T)sqrt(m),(T)1);
-			if(a.ql/B!=b.ql/B)
-				return a.ql/B<b.ql/B;
-			return a.qr/B<b.qr/B;
+			if(a.ql/B!=b.ql/B)return a.ql<b.ql;
+			if((a.ql/B)&1)return a.qr>b.qr;
+			return a.qr<b.qr;
 		});
 		for(auto [ql,qr,id]:q){
 			while(l>ql)add(--l);
