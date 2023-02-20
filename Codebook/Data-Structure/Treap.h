@@ -2,8 +2,9 @@ mt19937 mt(hash<string>()("Treap"));
 template<class T>struct Treap{
 	struct node{
 		node *l = NULL,*r = NULL;
-		T key,rev = 0;
+		T key;
 		int pri = mt(),sz = 1;
+		bool rev = 0;
 		node(T x):key(x){}
 		~node(){
 			for(auto &i:{l,r})
@@ -52,6 +53,20 @@ template<class T>struct Treap{
 		else{
 			b = t;
 			split(t->l,k,a,b->l);
+			b->pull();
+		}
+	}
+	void split_by_key(node *t,T k,node *&a,node *&b){
+		if(!t){a = b = NULL;return;}
+		t->push();
+		if(t->key<=k){
+			a = t;
+			split_by_key(t->r,k,a->r,b);
+			a->pull();
+		}
+		else{
+			b = t;
+			split_by_key(t->l,k,a,b->l);
 			b->pull();
 		}
 	}
