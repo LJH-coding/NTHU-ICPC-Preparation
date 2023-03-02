@@ -27,7 +27,5 @@ using namespace __gnu_pbds;
 using namespace std;
 template <typename K, typename cmp = less<K>, typename T = thin_heap_tag> using _heap = __gnu_pbds::priority_queue<K, cmp, T>;
 template <typename K, typename M = null_type> using _hash = gp_hash_table<K, M>;
-template <typename K, typename M = null_type, typename cmp = less<K>, typename T = rb_tree_tag> using _tree = tree<K, M, cmp, T, tree_order_statistics_node_update>;
-template <typename K, typename M = null_type, typename cmp = less_equal<K>, typename T = rb_tree_tag> using _multitree = tree<K, M, cmp, T, tree_order_statistics_node_update>;
-const int N = 1e6+5,L = 20,mod = 1e9+7,inf = 5e15+5;
+const int N = 1e6+5,L = 20,mod = 1e9+7,inf = 2e18+5;
 const double eps = 1e-7;
