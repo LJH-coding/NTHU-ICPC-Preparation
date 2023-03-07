@@ -1,37 +1,41 @@
-struct SCC {
-	int n;
-	vector<vector<int>> g, h;
-	SCC() : SCC(0) {}
-	SCC(int _n) : n(_n), g(_n), h(_n) {}
-	void add_edge(int u, int v) {
-		assert(0 <= u && u < n);
-		assert(0 <= v && v < n);
-		g[u].PB(v); h[v].PB(u);
+struct SCC{
+	int n,cnt = 0,dfn_cnt = 0;
+	vector<int>sz,scc,low,dfn;
+	stack<int>st;
+	vector<bool>vis;
+	SCC(int _n):n(_n){
+		sz.resize(n+5),scc.resize(n+5),low.resize(n+5),dfn.resize(n+5),vis.resize(n+5);
 	}
-	vector<int> solve() {
-		vector<int> id(n), top;
-		top.reserve(n);
-		function<void(int)> dfs1 = [&](int u) {
-			id[u] = 1;
-			for(auto v : g[u]) {
-				if(id[v] == 0) dfs1(v);
+	inline void build(const vector<vector<int>>&g,int u,int dis = 1){
+		low[u] = dfn[u] = ++dfn_cnt,vis[u] = 1;
+		st.push(u);
+		for(auto v:g[u]){
+			if(!dfn[v]){
+				build(g,v,dis+1);
+				low[u] = min(low[u],low[v]);
 			}
-			top.PB(u);
-		};
-		for(int i = 0; i < n; ++i) {
-			if(id[i] == 0) dfs1(i);
-		}
-		fill(id.begin(), id.end(), -1);
-		function<void(int, int)> dfs2 = [&](int u, int x) {
-			id[u] = x;
-			for(auto v : h[u]) {
-				if(id[v] == -1) dfs2(v);
+			else if(vis[v]){
+				low[u] = min(low[u],dfn[v]);
 			}
-		};
-		for(int i = n - 1, cnt = 0; i >= 0; --i) {
-			int u = top[i];
-			if(id[u] == -1) dfs2(u, cnt++);
 		}
-		return id;
+		if(low[u]==dfn[u]){
+			++cnt;
+			while(vis[u]){
+				auto v = st.top();
+				st.pop();
+				vis[v] = 0; 
+				scc[v] = cnt;
+				sz[cnt]++;
+			}
+		}
+	}
+	vector<vector<int>> compress(const vector<pii>&e,vector<int>&ind){
+		vector<vector<int>>ans(n+5);
+		for(auto [u,v]:e){
+			if(scc[u]==scc[v])continue;
+			ans[scc[u]].pb(scc[v]);
+			ind[scc[v]]++;
+		}
+		return ans;
 	}
 };
