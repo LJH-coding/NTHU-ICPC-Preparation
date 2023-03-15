@@ -23,6 +23,7 @@ int main(){
         } 
 		else if(et-st>=2000){
 			printf("\033[0;32mTime limit exceeded\033[0m on test #%d, Time %.0lfms\n",t,et-st);
+			return 0;
 		}
 		else {
             printf("\033[0;32mAccepted\033[0m on test #%d, Time %.0lfms\n", t, et - st);
