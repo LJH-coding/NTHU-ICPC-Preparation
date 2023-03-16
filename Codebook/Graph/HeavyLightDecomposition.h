@@ -1,9 +1,7 @@
 struct heavy_light_decomposition{
 	int n,root;
 	vector<int>dep,father,sz,mxson,topf,id;
-	segment_tree<int>seg;
 	heavy_light_decomposition(int _n,int _root,vector<vector<int>>&g): n(_n),root(_root){
-		seg.init(n+5);
 		dep.resize(n+5);
 		father.resize(n+5);
 		sz.resize(n+5);
@@ -37,24 +35,24 @@ struct heavy_light_decomposition{
 		dfs(root,0);
 		dfs2(root,root);
 	}
-	int query(int u,int v){
+	int query(int u,int v,const auto &qry){
 		int ans = 0;
 		while(topf[u]!=topf[v]){
 			if(dep[topf[u]]<dep[topf[v]])swap(u,v);
-			ans+=seg.query(id[topf[u]],id[u]).sum;
+			ans+=qry(id[topf[u]],id[u]);
 			u = father[topf[u]];
 		}
 		if(id[u]>id[v])swap(u,v);
-		ans+=seg.query(id[u],id[v]).sum;
+		ans+=qry(id[u],id[v]);
 		return ans;
 	}
-	void update(int u,int v,int val){
+	void update(int u,int v,int val,const auto &upd){
 		while(topf[u]!=topf[v]){
 			if(dep[topf[u]]<dep[topf[v]])swap(u,v);
-			seg.update(id[topf[u]],id[u],val);
+			upd(id[topf[u]],id[u],val);
 			u = father[topf[u]];
 		}
 		if(id[u]>id[v])swap(u,v);
-		seg.update(id[u],id[v],val);
+		upd(id[u],id[v],val);
 	}
 };
