@@ -1,7 +1,7 @@
-struct heavy_light_decomposition{
+struct HLD{
 	int n,root;
 	vector<int>dep,father,sz,mxson,topf,id;
-	heavy_light_decomposition(int _n,int _root,vector<vector<int>>&g): n(_n),root(_root){
+	HLD(int _n,int _root,vector<vector<int>>&g): n(_n),root(_root){
 		dep.resize(n+5);
 		father.resize(n+5);
 		sz.resize(n+5);
@@ -35,15 +35,15 @@ struct heavy_light_decomposition{
 		dfs(root,0);
 		dfs2(root,root);
 	}
-	int query(int u,int v,const auto &qry){
+	int query(int u,int v,const auto &qry,const auto &op){
 		int ans = 0;
 		while(topf[u]!=topf[v]){
 			if(dep[topf[u]]<dep[topf[v]])swap(u,v);
-			ans+=qry(id[topf[u]],id[u]);
+			ans = op(ans,qry(id[topf[u]],id[u]));
 			u = father[topf[u]];
 		}
 		if(id[u]>id[v])swap(u,v);
-		ans+=qry(id[u],id[v]);
+		ans = op(ans,qry(id[u],id[v]));
 		return ans;
 	}
 	void update(int u,int v,int val,const auto &upd){
