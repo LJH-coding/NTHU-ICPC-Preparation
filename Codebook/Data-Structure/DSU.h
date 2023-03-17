@@ -5,7 +5,7 @@ struct DSU{
 		sz.assign(n+1,-1);
 	}
 	int Find(int x){
-		return sz[x]<0?x:Find(sz[x]);
+		return sz[x]<0?x:sz[x] = Find(sz[x]);
 	}
 	bool Union(int a,int b){
 		int pa = Find(a),pb = Find(b);
