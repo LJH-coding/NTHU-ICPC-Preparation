@@ -25,6 +25,7 @@ using namespace __gnu_pbds;
 using namespace std;
 template <typename K, typename cmp = less<K>, typename T = thin_heap_tag> using _heap = __gnu_pbds::priority_queue<K, cmp, T>;
 template <typename K, typename M = null_type> using _hash = gp_hash_table<K, M>;
-const int N = 1e6+5,L = 20,mod = 1e9+7,inf = 2e9+5;
+const int N = 1e6+5,L = 20,mod = 1e9+7;
+const long long inf = 2e18+5;
 const double eps = 1e-7,pi = acos(-1);
 mt19937 mt(std::chrono::system_clock::now().time_since_epoch().count());
