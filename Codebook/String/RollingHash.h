@@ -22,11 +22,11 @@ template<class T,const int hash_cnt>struct rolling_hash{
 			}
 		}
     }
-    vector<int> query(int l,int r){
-		vector<int>ans;
+    array<int,hash_cnt> query(int l,int r){
+		array<int,hash_cnt>ans;
         if(l==0){
 			for(int i = 0;i<hash_cnt;++i){
-				ans.push_back(hash[i][r]);
+				ans[i] = hash[i][r];
 			}
 			return ans;
 		}
@@ -34,7 +34,7 @@ template<class T,const int hash_cnt>struct rolling_hash{
 			int p = hash_value[i].first,q = hash_value[i].second;
 			int x = (hash[i][r]-(1ll*hash[i][l-1]*p_table[i][r-l+1]))%q;
 			x = (x+q)%q;
-			ans.push_back(x);
+			ans[i] = x;
 		}
         return ans;
     }
