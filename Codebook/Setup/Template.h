@@ -29,3 +29,9 @@ const int N = 1e6+5,L = 20,mod = 1e9+7;
 const long long inf = 2e18+5;
 const double eps = 1e-7,pi = acos(-1);
 mt19937 mt(std::chrono::system_clock::now().time_since_epoch().count());
+void solve(){
+}
+signed main(){
+	IOS;
+	solve();
+}
