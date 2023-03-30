@@ -1,9 +1,9 @@
 template<class T>
 struct Dinic{
 	struct edge{
-		int to;
+		int from, to;
 		T cap;
-		edge(int _to, T _cap) : to(_to), cap(_cap) {}
+		edge(int _from, int _to, T _cap) : from(_from), to(_to), cap(_cap) {}
 	};
 	int n;
 	vector<edge> edges;
@@ -12,9 +12,9 @@ struct Dinic{
 	Dinic(int _n) : n(_n+1), g(_n+1) {}
 	void add_edge(int u, int v, T cap){
 		g[u].push_back(edges.size());
-		edges.push_back(edge(v,cap));
+		edges.push_back(edge(u, v, cap));
 		g[v].push_back(edges.size());
-		edges.push_back(edge(u,0));
+		edges.push_back(edge(v, u, 0));
 	}
 	bool bfs(int s,int t){
 		h.assign(n, -1);
@@ -68,5 +68,31 @@ struct Dinic{
 			f -= send;
 		}
 		return ans;
+	}
+	vector<pair<int,int>> min_cut(int s) {
+		vector<bool> vis(n);
+		vis[s] = true;
+		queue<int> que;
+		que.push(s);
+		while(!que.empty()) {
+			int u = que.front();
+			que.pop();
+			for(auto id : g[u]) {
+				const auto& e = edges[id];
+				int v = e.to;
+				if(e.cap > 0 && !vis[v]) {
+					vis[v] = true;
+					que.push(v);
+				}
+			}
+		}
+		vector<pair<int,int>> cut;
+		for(int i = 0; i < (int) edges.size(); i += 2) {
+			const auto& e = edges[i];
+			if(vis[e.from] && !vis[e.to]) {
+				cut.push_back(make_pair(e.from, e.to));
+			}
+		}
+		return cut;
 	}
 };
