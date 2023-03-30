@@ -2,11 +2,11 @@ template<class T,T (*op)(T,T)>
 struct segment_tree{
 	struct tag{
 		T set,add;
-		tag(T _set = 0,T _add = 0):set(_set),add(_add){}
+		tag(T _set = -1,T _add = 0):set(_set),add(_add){}
 		friend tag operator +(tag lhs,tag rhs){
-			if(rhs.set)return rhs;
-			if(lhs.set)return tag(lhs.set+rhs.add,0);
-			return tag(0,lhs.add+rhs.add);
+			if(rhs.set!=-1)return rhs;
+			if(lhs.set!=-1)return tag(lhs.set+rhs.add,0);
+			return tag(-1,lhs.add+rhs.add);
 		}
 	};
 	struct node{
@@ -20,7 +20,7 @@ struct segment_tree{
 			return node(op(lhs.val,rhs.val),lhs.l,rhs.r);
 		}
 		void update(tag &tmp){
-			if(tmp.set)val = tmp.set*(r-l+1);
+			if(tmp.set!=-1)val = tmp.set*(r-l+1);
 			else val+=tmp.add*(r-l+1);
 		}
 		void apply(tag &tmp){
@@ -28,7 +28,7 @@ struct segment_tree{
 			update(tmp);
 		}
 		void push(node &a,node &b){
-			if(t.set==0 and t.add==0)return;
+			if(t.set==-1 and t.add==0)return;
 			a.apply(t);
 			b.apply(t);
 			t = tag();
@@ -63,6 +63,7 @@ struct segment_tree{
 		if(l<=arr[idx].l and arr[idx].r<=r){
 			return arr[idx];
 		}
+		arr[idx].push(arr[idx<<1],arr[idx<<1|1]);
 		int m = (arr[idx].l+arr[idx].r)>>1;
 		node ans = node(),left = node(),right = node();
 		if(l<=m)left = query(l,r,idx<<1);
