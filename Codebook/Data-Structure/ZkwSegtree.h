@@ -1,19 +1,19 @@
 template<class S,
-         S (*op)(S, S),
-         S (*e)(),
+         S (*node_pull)(S, S),
+         S (*node_init)(),
          class F,
-         S (*mapping)(F, S),
-         F (*composition)(F, F),
-         F (*id)()>
-class lazy_segtree {
+         S (*mapping)(S, F),
+         F (*tag_pull)(F, F),
+         F (*tag_init)()>
+class segment_tree {
 public:
-	lazy_segtree() : lazy_segtree(0) {}
-	explicit lazy_segtree(int _n) : lazy_segtree(std::vector<S>(_n, e())) {}
-	explicit lazy_segtree(const std::vector<S>& v) : n((int) v.size()) {
+	segment_tree() : segment_tree(0) {}
+	explicit segment_tree(int _n) : segment_tree(vector<S>(_n, node_init())) {}
+	explicit segment_tree(const vector<S>& v) : n((int) v.size()) {
 		log = std::__lg(2 * n - 1);
 		size = 1 << log;
-		d = std::vector<S>(size << 1, e());
-		lz = std::vector<F>(size, id());
+		d = vector<S>(size << 1, node_init());
+		lz = vector<F>(size, tag_init());
 		for(int i = 0; i < n; i++) {
 			d[size + i] = v[i];
 		}
@@ -21,7 +21,6 @@ public:
 			update(i);
 		}
 	}
-
 	void set(int p, S x) {
 		assert(0 <= p && p < n);
 		p += size;
@@ -33,7 +32,6 @@ public:
 			update(p >> i);
 		}
 	}
-
 	S get(int p) {
 		assert(0 <= p && p < n);
 		p += size;
@@ -42,15 +40,13 @@ public:
 		}
 		return d[p];
 	}
-
 	S operator[](int p) {
 		return get(p);
 	}
-
-	S prod(int l, int r) {
+	S query(int l, int r) {
 		assert(0 <= l && l <= r && r <= n);
 		if(l == r) {
-			return e();
+			return node_init();
 		}
 		l += size;
 		r += size;
@@ -62,22 +58,19 @@ public:
 				push(r >> i);
 			}
 		}
-		S sml = e(), smr = e();
+		S sml = node_init(), smr = node_init();
 		while(l < r) {
 			if(l & 1) {
-				sml = op(sml, d[l++]);
+				sml = node_pull(sml, d[l++]);
 			}
 			if(r & 1) {
-				smr = op(d[--r], smr);
+				smr = node_pull(d[--r], smr);
 			}
 			l >>= 1;
 			r >>= 1;
 		}
-		return op(sml, smr);
+		return node_pull(sml, smr);
 	}
-
-	S all_prod() const { return d[1]; }
-
 	void apply(int p, F f) {
 		assert(0 <= p && p < n);
 		p += size;
@@ -89,7 +82,7 @@ public:
 			update(p >> i);
 		}
 	}
-	void apply(int l, int r, F f) {
+	void update(int l, int r, F f) {
 		assert(0 <= l && l <= r && r <= n);
 		if(l == r) {
 			return;
@@ -128,96 +121,20 @@ public:
 			}
 		}
 	}
-
-	template<bool (*g)(S)> int max_right(int l) {
-		return max_right(l, [](S x) { return g(x); });
-	}
-
-	template<class G> int max_right(int l, G g) {
-		assert(0 <= l && l <= n);
-		assert(g(e()));
-		if(l == n) {
-			return n;
-		}
-		l += size;
-		for(int i = log; i; i--) {
-			push(l >> i);
-		}
-		S sm = e();
-		do {
-			while(!(l & 1)) {
-				l >>= 1;
-			}
-			if(!g(op(sm, d[l]))) {
-				while(l < size) {
-					push(l);
-					l <<= 1;
-					if(g(op(sm, d[l]))) {
-						sm = op(sm, d[l]);
-						l++;
-					}
-				}
-				return l - size;
-			}
-			sm = op(sm, d[l]);
-			l++;
-		} while((l & -l) != l);
-		return n;
-	}
-
-	template<bool (*g)(S)> int min_left(int r) {
-		return min_left(r, [](S x) { return g(x); });
-	}
-
-	template<class G> int min_left(int r, G g) {
-		assert(0 <= r && r <= n);
-		assert(g(e()));
-		if(r == 0) {
-			return 0;
-		}
-		r += size;
-		for(int i = log; i >= 1; i--) {
-			push((r - 1) >> i);
-		}
-		S sm = e();
-		do {
-			r--;
-			while(r > 1 && (r & 1)) {
-				r >>= 1;
-			}
-			if(!g(op(d[r], sm))) {
-				while(r < size) {
-					push(r);
-					r = r << 1 | 1;
-					if(g(op(d[r], sm))) {
-						sm = op(d[r], sm);
-						r--;
-					}
-				}
-				return r + 1 - size;
-			}
-			sm = op(d[r], sm);
-		} while((r & -r) != r);
-		return 0;
-	}
-
 private:
 	int n, size, log;
-	std::vector<S> d;
-	std::vector<F> lz;
-
-	inline void update(int k) { d[k] = op(d[k << 1], d[k << 1 | 1]); }
-
+	vector<S> d;
+	vector<F> lz;
+	inline void update(int k) { d[k] = node_pull(d[k << 1], d[k << 1 | 1]); }
 	void all_apply(int k, F f) {
-		d[k] = mapping(f, d[k]);
+		d[k] = mapping(d[k], f);
 		if(k < size) {
-			lz[k] = composition(f, lz[k]);
+			lz[k] = tag_pull(lz[k], f);
 		}
 	}
-
 	void push(int k) {
 		all_apply(k << 1, lz[k]);
 		all_apply(k << 1 | 1, lz[k]);
-		lz[k] = id();
+		lz[k] = tag_init();
 	}
 };
