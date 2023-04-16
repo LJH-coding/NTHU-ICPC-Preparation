@@ -1,44 +1,38 @@
-template<class T,T (*op)(T,T)>
+template<class S,
+		 S (*node_pull)(S, S),
+		 S (*node_init)(),
+		 class T,
+		 S (*mapping)(S, T),
+		 T (*tag_pull)(T, T),
+		 T (*tag_init)()>
 struct segment_tree{
-	struct tag{
-		T set,add;
-		tag(T _set = -1,T _add = 0):set(_set),add(_add){}
-		friend tag operator +(tag lhs,tag rhs){
-			if(rhs.set!=-1)return rhs;
-			if(lhs.set!=-1)return tag(lhs.set+rhs.add,0);
-			return tag(-1,lhs.add+rhs.add);
-		}
-	};
 	struct node{
-		T val;
+		S seg;
+		T tag = tag_init();
 		int l,r;
-		node(T k = 0,int _l = -1,int _r = -1) : val(k),l(_l),r(_r){}
-		tag t = tag();
+		node(S _seg = node_init(),int _l = -1,int _r = -1) : seg(_seg), l(_l), r(_r){}
 		friend node operator +(const node &lhs,const node &rhs){
 			if(lhs.l==-1)return rhs;
 			if(rhs.l==-1)return lhs;
-			return node(op(lhs.val,rhs.val),lhs.l,rhs.r);
-		}
-		void update(tag &tmp){
-			if(tmp.set!=-1)val = tmp.set*(r-l+1);
-			else val+=tmp.add*(r-l+1);
-		}
-		void apply(tag &tmp){
-			t = t+tmp;
-			update(tmp);
-		}
-		void push(node &a,node &b){
-			if(t.set==-1 and t.add==0)return;
-			a.apply(t);
-			b.apply(t);
-			t = tag();
-		}
+			return node(node_pull(lhs.seg,rhs.seg),lhs.l,rhs.r);
+		};
 	};
 	vector<node>arr;
-	inline void build(const auto &v,const int &l,const int &r,int idx = 1){
-		if(idx==1)arr.assign((r-l+1)<<2,node());
+	void all_apply(int idx,T t){
+		arr[idx].seg = mapping(arr[idx].seg, t);
+		arr[idx].tag = tag_pull(arr[idx].tag, t);
+	}
+	void push(int idx){
+		all_apply(idx<<1, arr[idx].tag);
+		all_apply(idx<<1|1, arr[idx].tag);
+		arr[idx].tag = tag_init();
+	}
+	inline void build(const vector<S> &v,const int &l,const int &r,int idx = 1){
+		if(idx==1)arr.resize((r-l+1)<<2);
 		if(l==r){
-			arr[idx] = node(v[l],l,r);
+			arr[idx].seg = v[l];
+			arr[idx].tag = tag_init();
+			arr[idx].l = arr[idx].r = l;
 			return;
 		}
 		int m = (l+r)>>1;
@@ -46,29 +40,29 @@ struct segment_tree{
 		build(v,m+1,r,idx<<1|1);
 		arr[idx] = arr[idx<<1]+arr[idx<<1|1];
 	}
-	inline void update(const int &l,const int &r,tag y,int idx = 1){
-		if(l>r)return;
-		if(l<=arr[idx].l and arr[idx].r<=r){
-			arr[idx].apply(y);
+	inline void update(const int &ql,const int &qr,T t,int idx = 1){
+		assert(ql<=qr);
+		if(ql<=arr[idx].l and arr[idx].r<=qr){
+			all_apply(idx, t);
 			return;
 		}
-		arr[idx].push(arr[idx<<1],arr[idx<<1|1]);
+		push(idx);
 		int m = (arr[idx].l+arr[idx].r)>>1;
-		if(l<=m)update(l,r,y,idx<<1);
-		if(r>m)update(l,r,y,idx<<1|1);
+		if(ql<=m)update(ql,qr,t,idx<<1);
+		if(qr>m)update(ql,qr,t,idx<<1|1);
 		arr[idx] = arr[idx<<1]+arr[idx<<1|1];
 	}
-	inline node query(const int &l,const int &r,int idx = 1){
-		if(l>r)return node();
-		if(l<=arr[idx].l and arr[idx].r<=r){
-			return arr[idx];
+	inline S query(const int &ql,const int &qr,int idx = 1){
+		assert(ql<=qr);
+		if(ql<=arr[idx].l and arr[idx].r<=qr){
+			return arr[idx].seg;
 		}
-		arr[idx].push(arr[idx<<1],arr[idx<<1|1]);
+		push(idx);
 		int m = (arr[idx].l+arr[idx].r)>>1;
-		node ans = node(),left = node(),right = node();
-		if(l<=m)left = query(l,r,idx<<1);
-		if(r>m)right = query(l,r,idx<<1|1);
-		ans = left+right;
+		S ans = node_init(),lhs = node_init(),rhs = node_init();
+		if(ql<=m)lhs = query(ql,qr,idx<<1);
+		if(qr>m)rhs = query(ql,qr,idx<<1|1);
+		ans = node_pull(lhs,rhs);
 		return ans;
 	}
 };
