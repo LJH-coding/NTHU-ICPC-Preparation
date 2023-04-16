@@ -44,11 +44,8 @@ public:
 		return get(p);
 	}
 	S query(int l, int r) {
-		assert(0 <= l && l <= r && r <= n);
 		r++;
-		if(l == r) {
-			return node_init();
-		}
+		assert(l<=r);
 		l += size;
 		r += size;
 		for(int i = log; i; i--) {
@@ -84,11 +81,8 @@ public:
 		}
 	}
 	void update(int l, int r, F f) {
-		assert(0 <= l && l <= r && r <= n);
 		r++;
-		if(l == r) {
-			return;
-		}
+		assert(l<=r);
 		l += size;
 		r += size;
 		for(int i = log; i; i--) {
