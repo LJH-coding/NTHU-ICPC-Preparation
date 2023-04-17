@@ -1,6 +1,6 @@
 template<class T>
 T MaximumDistance(vector<Point<T>>&p){
-	vector<Point<T>>C = ConvexHull(p);
+	vector<Point<T>>C = ConvexHull(p,0);
 	int n = C.size(),t = 2;
 	T ans = 0;
 	for(int i = 0;i<n;i++){

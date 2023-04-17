@@ -1,26 +1,19 @@
 template<class T>
-vector<Point<T>> ConvexHull(vector<Point<T>>&p){
-    sort(all(p),[&](Point<T>a,Point<T>b){
+vector<Point<T>> ConvexHull(vector<Point<T>> v,bool Boundary = 1){
+	sort(begin(v),end(v),[&](Point<T> &a,Point<T> &b){
 		if(a.x!=b.x)return a.x<b.x;
 		return a.y<b.y;
 	});
-	vector<Point<T>>hull;
-    hull.clear();
-    for(auto i : p){
-        while(hull.size() > 1 && 
-			((i-hull[hull.size()-2])^(hull.back()-hull[hull.size()-2]))>=0)
-            hull.pop_back();
-        hull.push_back(i);
-    }
-    int sz = hull.size();
-    hull.pop_back();
-    reverse(all(p));
-    for(auto i : p){
-        while(hull.size() > sz && 
-			((i-hull[hull.size()-2])^(hull.back()-hull[hull.size()-2]))>=0)
-            hull.pop_back();
-        hull.push_back(i);
-    }
-    hull.pop_back();
-	return hull;
+	vector<Point<T>>ans;
+	int t = 1;
+	auto add = [&](Point<T> &p){
+		while(ans.size() > t and ((p - ans[ans.size() - 2])^(ans.back() - ans[ans.size() - 2])) > (flag ? 0 : -1))
+			ans.pop_back();
+		ans.push_back(p);
+	};
+	for(int i = 0; i < v.size(); ++i) add(v[i]);
+	t = ans.size();
+	for(int i = (int)(v.size())-2; i >= 0; --i) add(v[i]);
+	if(v.size() > 1) ans.pop_back();
+	return ans;
 }
