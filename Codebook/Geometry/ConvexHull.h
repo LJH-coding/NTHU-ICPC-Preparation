@@ -7,7 +7,7 @@ vector<Point<T>> ConvexHull(vector<Point<T>> v,bool Boundary = 1){
 	vector<Point<T>>ans;
 	int t = 1;
 	auto add = [&](Point<T> &p){
-		while(ans.size() > t and ((p - ans[ans.size() - 2])^(ans.back() - ans[ans.size() - 2])) > (flag ? 0 : -1))
+		while(ans.size() > t and ((p - ans[ans.size() - 2])^(ans.back() - ans[ans.size() - 2])) > (Boundary ? 0 : 0-eps))
 			ans.pop_back();
 		ans.push_back(p);
 	};
