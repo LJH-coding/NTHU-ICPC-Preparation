@@ -1,0 +1,60 @@
+Setup
+	Template.h
+	q.sh
+Data-Structure
+	AreaOfRectangles.h
+	Fenwick.h
+	RedBlackTree.h
+	Treap.h
+	DSU.h
+	Hash.h
+	Segtree.h
+	ZkwSegtree.h
+	DsuUndo.h
+	MoAlgo.h
+	SparseTable.h
+	DynamicSegtree.h
+	Persistent_DSU.h
+	TimingSegtree.h
+Geometry
+	ConvexHull.h
+	MinimumDistance.h
+	PointInPolygon.h
+	Template.h
+	MaximumDistance.h
+	PointInConvex.h
+	PolarAngleSort.h
+	Theorem.tex
+Graph
+	BCC_AP.h
+	CentroidDecomposition.h
+	HLD.h
+	MCMF.h
+	Bridges.h
+	Dinic.h
+	LCA.h
+	SCC.h
+Math
+	CRT.h
+	Factorizer.h
+	InvGCD.h
+	PowMod.h
+	DiscreteLog.h
+	FloorSum.h
+	LinearSieve.h
+	Theorem.tex
+	ExtendGCD.h
+	GeneratingFunctions.tex
+	Numbers.tex
+Misc
+	Debug.h
+	Discrete.h
+	DuiPai.cpp
+	FastIO.h
+	TenarySearch.h
+	Timer.h
+String
+	DynamicKMP.h
+	RollingHash.h
+	SuffixArray.h
+	Trie.h
