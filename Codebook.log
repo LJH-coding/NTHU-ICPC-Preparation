@@ -1,0 +1,840 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Homebrew) (preloaded format=xelatex 2023.3.21)  18 APR 2023 17:28
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Codebook.tex
+(./Codebook.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22>
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/base/article.
+cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/base/size10.c
+lo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count181
+\c@section=\count182
+\c@subsection=\count183
+\c@subsubsection=\count184
+\c@paragraph=\count185
+\c@subparagraph=\count186
+\c@figure=\count187
+\c@table=\count188
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (./Codebook-setup.tex
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/amscls/amsthm
+.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks16
+\thm@bodyfont=\toks17
+\thm@headfont=\toks18
+\thm@notefont=\toks19
+\thm@headpunct=\toks20
+\thm@preskip=\skip50
+\thm@postskip=\skip51
+\thm@headsep=\skip52
+\dth@everypar=\toks21
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/amsfonts/amss
+ymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/amsfonts/amsf
+onts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks22
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/amsmath/amsma
+th.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip53
+
+For additional information on amsmath, use the `?' option.
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/amsmath/amste
+xt.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/amsmath/amsge
+n.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks23
+\ex@=\dimen141
+))
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/amsmath/amsbs
+y.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/amsmath/amsop
+n.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count189
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count190
+\leftroot@=\count191
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count192
+\DOTSCASE@=\count193
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count194
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count195
+\dotsspace@=\muskip16
+\c@parentequation=\count196
+\dspbrk@lvl=\count197
+\tag@help=\toks24
+\row@=\count198
+\column@=\count199
+\maxfields@=\count266
+\andhelp@=\toks25
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks26
+\multlinegap=\skip54
+\multlinetaggap=\skip55
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/fontspec/font
+spec.sty
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/l3packages/xp
+arse/xparse.sty
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/l3kernel/expl
+3.sty
+Package: expl3 2023-02-22 L3 programming layer (loader) 
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/l3backend/l3b
+ackend-xetex.def
+File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
+\g__graphics_track_int=\count267
+\l__pdf_internal_box=\box53
+\g__pdf_backend_object_int=\count268
+\g__pdf_backend_annotation_int=\count269
+\g__pdf_backend_link_int=\count270
+))
+Package: xparse 2023-02-02 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/fontspec/font
+spec-xetex.sty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count271
+\l__fontspec_language_int=\count272
+\l__fontspec_strnum_int=\count273
+\l__fontspec_tmp_int=\count274
+\l__fontspec_tmpa_int=\count275
+\l__fontspec_tmpb_int=\count276
+\l__fontspec_tmpc_int=\count277
+\l__fontspec_em_int=\count278
+\l__fontspec_emdef_int=\count279
+\l__fontspec_strong_int=\count280
+\l__fontspec_strongdef_int=\count281
+\l__fontspec_tmpa_dim=\dimen150
+\l__fontspec_tmpb_dim=\dimen151
+\l__fontspec_tmpc_dim=\dimen152
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/base/fontenc.
+sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/fontspec/font
+spec.cfg)))
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/xelatex/xecjk/xeCJK
+.sty
+Package: xeCJK 2022/08/05 v3.9.1 Typesetting CJK scripts with XeLaTeX
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/ctex/ctexhook
+.sty
+Package: ctexhook 2022/07/14 v2.5.10 Document and package hooks (CTEX)
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/l3packages/xt
+emplate/xtemplate.sty
+Package: xtemplate 2023-02-02 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen153
+\l__xtemplate_tmp_int=\count282
+\l__xtemplate_tmp_muskip=\muskip17
+\l__xtemplate_tmp_skip=\skip56
+)
+\l__xeCJK_tmp_int=\count283
+\l__xeCJK_tmp_box=\box54
+\l__xeCJK_tmp_dim=\dimen154
+\l__xeCJK_tmp_skip=\skip57
+\g__xeCJK_space_factor_int=\count284
+\l__xeCJK_begin_int=\count285
+\l__xeCJK_end_int=\count286
+\c__xeCJK_CJK_class_int=\XeTeXcharclass1
+\c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
+\c__xeCJK_FullRight_class_int=\XeTeXcharclass3
+\c__xeCJK_HalfLeft_class_int=\XeTeXcharclass4
+\c__xeCJK_HalfRight_class_int=\XeTeXcharclass5
+\c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
+\c__xeCJK_CM_class_int=\XeTeXcharclass7
+\c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
+\l__xeCJK_last_skip=\skip58
+\c__xeCJK_none_node=\count287
+\g__xeCJK_node_int=\count288
+\c__xeCJK_CJK_node_dim=\dimen155
+\c__xeCJK_CJK-space_node_dim=\dimen156
+\c__xeCJK_default_node_dim=\dimen157
+\c__xeCJK_CJK-widow_node_dim=\dimen158
+\c__xeCJK_normalspace_node_dim=\dimen159
+\c__xeCJK_default-space_node_skip=\skip59
+\l__xeCJK_ccglue_skip=\skip60
+\l__xeCJK_ecglue_skip=\skip61
+\l__xeCJK_punct_kern_skip=\skip62
+\l__xeCJK_indent_box=\box55
+\l__xeCJK_last_penalty_int=\count289
+\l__xeCJK_last_bound_dim=\dimen160
+\l__xeCJK_last_kern_dim=\dimen161
+\l__xeCJK_widow_penalty_int=\count290
+
+Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
+(xtemplate)             argument(s) on line 2396.
+
+\l__xeCJK_fixed_punct_width_dim=\dimen162
+\l__xeCJK_mixed_punct_width_dim=\dimen163
+\l__xeCJK_middle_punct_width_dim=\dimen164
+\l__xeCJK_fixed_margin_width_dim=\dimen165
+\l__xeCJK_mixed_margin_width_dim=\dimen166
+\l__xeCJK_middle_margin_width_dim=\dimen167
+\l__xeCJK_bound_punct_width_dim=\dimen168
+\l__xeCJK_bound_margin_width_dim=\dimen169
+\l__xeCJK_margin_minimum_dim=\dimen170
+\l__xeCJK_kerning_total_width_dim=\dimen171
+\l__xeCJK_same_align_margin_dim=\dimen172
+\l__xeCJK_different_align_margin_dim=\dimen173
+\l__xeCJK_kerning_margin_width_dim=\dimen174
+\l__xeCJK_kerning_margin_minimum_dim=\dimen175
+\l__xeCJK_bound_dim=\dimen176
+\l__xeCJK_reverse_bound_dim=\dimen177
+\l__xeCJK_margin_dim=\dimen178
+\l__xeCJK_minimum_bound_dim=\dimen179
+\l__xeCJK_kerning_margin_dim=\dimen180
+\g__xeCJK_family_int=\count291
+\l__xeCJK_fam_int=\count292
+\g__xeCJK_fam_allocation_int=\count293
+\l__xeCJK_verb_case_int=\count294
+\l__xeCJK_verb_exspace_skip=\skip63
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/xelatex/xecjk/xeCJK
+.cfg
+File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
+))
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/geometry/geom
+etry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics/keyv
+al.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks28
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/iftex/ifvte
+x.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/iftex/iftex
+.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count295
+\Gm@cntv=\count296
+\c@Gm@tempcnt=\count297
+\Gm@bindingoffset=\dimen181
+\Gm@wd@mp=\dimen182
+\Gm@odd@mp=\dimen183
+\Gm@even@mp=\dimen184
+\Gm@layoutwidth=\dimen185
+\Gm@layoutheight=\dimen186
+\Gm@layouthoffset=\dimen187
+\Gm@layoutvoffset=\dimen188
+\Gm@dimlist=\toks29
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics/colo
+r.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics-cfg/
+color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: xetex.def on input line 149.
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics-def/
+xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics/math
+color.ltx))
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/xcolor/xcolor
+.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics-cfg/
+color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 227.
+LaTeX Info: Redefining \color on input line 711.
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics/math
+color.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/xcolor/x11nam
+.def
+File: x11nam.def 2022/06/12 v2.14 Predefined colors according to Unix/X11 (UK)
+))
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/listings/list
+ings.sty
+\lst@mode=\count298
+\lst@gtempboxa=\box56
+\lst@token=\toks30
+\lst@length=\count299
+\lst@currlwidth=\dimen189
+\lst@column=\count300
+\lst@pos=\count301
+\lst@lostspace=\dimen190
+\lst@width=\dimen191
+\lst@newlines=\count302
+\lst@lineno=\count303
+\lst@maxwidth=\dimen192
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/listings/lstm
+isc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count304
+\lst@skipnumbers=\count305
+\lst@framebox=\box57
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/listings/list
+ings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/xelatex/xecjk/xeCJK
+-listings.sty
+Package: xeCJK-listings 2022/08/05 v3.9.1 xeCJK patch file for listings
+\l__xeCJK_listings_max_char_int=\count306
+\l__xeCJK_listings_flag_int=\count307
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/fancyhdr/fanc
+yhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip64
+\f@nch@O@elh=\skip65
+\f@nch@O@erh=\skip66
+\f@nch@O@olh=\skip67
+\f@nch@O@orh=\skip68
+\f@nch@O@elf=\skip69
+\f@nch@O@erf=\skip70
+\f@nch@O@olf=\skip71
+\f@nch@O@orf=\skip72
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics/grap
+hicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics/grap
+hics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics/trig
+.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics-cfg/
+graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+)
+\Gin@req@height=\dimen193
+\Gin@req@width=\dimen194
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/base/ifthen.s
+ty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/tools/enumera
+te.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks31
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/titlesec/titl
+esec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box58
+\beforetitleunit=\skip73
+\aftertitleunit=\skip74
+\ttl@plus=\dimen195
+\ttl@minus=\dimen196
+\ttl@toksa=\toks32
+\titlewidth=\dimen197
+\titlewidthlast=\dimen198
+\titlewidthfirst=\dimen199
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/pdfpages/pdfp
+ages.sty
+Package: pdfpages 2022/12/19 v0.5x Insert pages of external PDF documents (AM)
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/tools/calc.st
+y
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count308
+\calc@Bcount=\count309
+\calc@Adimen=\dimen256
+\calc@Bdimen=\dimen257
+\calc@Askip=\skip75
+\calc@Bskip=\skip76
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count310
+\calc@Cskip=\skip77
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/eso-pic/eso-p
+ic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen258
+\ESO@tempdimb=\dimen259
+)
+\AM@pagewidth=\dimen260
+\AM@pageheight=\dimen261
+\AM@fboxrule=\dimen262
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/pdfpages/ppxe
+tex.def
+File: ppxetex.def 2022/12/19 v0.5x Pdfpages driver for XeTeX (AM)
+)
+\pdfpages@includegraphics@status=\count311
+\AM@pagebox=\box59
+\AM@global@opts=\toks33
+\AM@pagecnt=\count312
+\AM@toc@title=\toks34
+\AM@lof@heading=\toks35
+\c@AM@survey=\count313
+\AM@templatesizebox=\box60
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/tools/multico
+l.sty
+Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
+\c@tracingmulticols=\count314
+\mult@box=\box61
+\multicol@leftmargin=\dimen263
+\c@unbalance=\count315
+\c@collectmore=\count316
+\doublecol@number=\count317
+\multicoltolerance=\count318
+\multicolpretolerance=\count319
+\full@width=\dimen264
+\page@free=\dimen265
+\premulticols=\dimen266
+\postmulticols=\dimen267
+\multicolsep=\skip78
+\multicolbaselineskip=\skip79
+\partial@page=\box62
+\last@line=\box63
+\maxbalancingoverflow=\dimen268
+\mult@rightbox=\box64
+\mult@grightbox=\box65
+\mult@firstbox=\box66
+\mult@gfirstbox=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\c@minrows=\count320
+\c@columnbadness=\count321
+\c@finalcolumnbadness=\count322
+\last@try=\dimen269
+\multicolovershoot=\dimen270
+\multicolundershoot=\dimen271
+\mult@nat@firstbox=\box104
+\colbreak@box=\box105
+\mc@col@check@num=\count323
+)
+
+Package fontspec Info: Font family 'timesnewroman.ttf(0)' created for font
+(fontspec)             'times new roman.ttf' with options
+(fontspec)             [Ligatures=TeX,Path=fonts/,BoldFont = times new roman
+(fontspec)             bold.ttf].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[fonts/times new
+(fontspec)             roman.ttf]/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"[fonts/times new
+(fontspec)             roman bold.ttf]/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+
+
+Package fontspec Info: Font family 'consola.ttf(0)' created for font
+(fontspec)             'consola.ttf' with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=Word
+Space,Path=fonts/,BoldFont
+(fontspec)             = consolab.ttf,ItalicFont = consolai.ttf].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[fonts/consola.ttf]/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[fonts/consolab.ttf]/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[fonts/consolai.ttf]/OT:script=latn;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+
+
+Package fontspec Info: Font family 'msjh.ttc(0)' created for font 'msjh.ttc'
+(fontspec)             with options [Script={CJK},Path={fonts/}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[fonts/msjh.ttc]/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[fonts/msjh.ttc]/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[fonts/msjh.ttc]/OT:script=hani;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"[fonts/msjh.ttc]/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+) (./Codebook.aux)
+\openout1 = `Codebook.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
+.
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/base/ts1cmr.f
+d
+File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+
+Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 5.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 5.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 5.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 5.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 5.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 5.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 5.
+LaTeX Font Info:    Redeclaring math accent \check on input line 5.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 5.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 5.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 5.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 5.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 5.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 5.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/timesnewroman.ttf(0)/m/n on input li
+ne 5.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 5.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/timesnewroman.ttf(0)/m/n on input l
+ine 5.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/timesnewroman.ttf(0)/m/n --> TU/timesnewroman.ttf(0)
+/m/n on input line 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/timesnewroman.ttf(0)/m/it on input 
+line 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/timesnewroman.ttf(0)/b/n on input l
+ine 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/consola.ttf(0)/m/n on input line 5.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/timesnewroman.ttf(0)/m/n --> TU/timesnewroman.ttf(0)
+/b/n on input line 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/timesnewroman.ttf(0)/b/it on input
+ line 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 5.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/consola.ttf(0)/b/n on input line 5.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(30.0pt, 477.88078pt, 89.62709pt)
+* v-part:(T,H,B)=(50.0pt, 693.6402pt, 101.40665pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=552.50787pt
+* \textheight=778.04684pt
+* \oddsidemargin=-42.26999pt
+* \evensidemargin=-42.26999pt
+* \topmargin=-59.26999pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=15.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\c@lstlisting=\count324
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/pdflscape/pdf
+lscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/pdflscape/pdf
+lscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/graphics/lsca
+pe.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
+
+)) (./list.tex
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/listings/lstl
+ang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/listings/lstl
+ang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/listings/lstm
+isc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+) (./Codebook/Data-Structure/Treap.h)
+(./Codebook/Data-Structure/Segtree.h) (./Codebook/Data-Structure/DsuUndo.h
+[1
+
+]) (./Codebook/Data-Structure/DSU.h) (./Codebook/Data-Structure/Fenwick.h)
+(./Codebook/Data-Structure/Persistent_DSU.h)
+(./Codebook/Data-Structure/TimingSegtree.h)
+(./Codebook/Data-Structure/AreaOfRectangles.h [2])
+(./Codebook/Data-Structure/SparseTable.h)
+(./Codebook/Data-Structure/DynamicSegtree.h)
+(./Codebook/Data-Structure/ZkwSegtree.h [3])
+(./Codebook/Data-Structure/MoAlgo.h) (./Codebook/Data-Structure/Hash.h)
+(./Codebook/Data-Structure/RedBlackTree.h) (./Codebook/Geometry/Theorem.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/amsfonts/umsa
+.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+
+(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/amsfonts/umsb
+.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)) (./Codebook/Geometry/PointInPolygon.h)
+(./Codebook/Geometry/PointInConvex.h) [4]
+(./Codebook/Geometry/MaximumDistance.h) (./Codebook/Geometry/PolarAngleSort.h)
+(./Codebook/Geometry/MinimumDistance.h) (./Codebook/Geometry/ConvexHull.h)
+(./Codebook/Geometry/Template.h) (./Codebook/Graph/HLD.h [5])
+(./Codebook/Graph/Bridges.h) (./Codebook/Graph/MCMF.h) [6]
+(./Codebook/Graph/LCA.h) (./Codebook/Graph/CentroidDecomposition.h)
+(./Codebook/Graph/BCC_AP.h) (./Codebook/Graph/SCC.h [7])
+(./Codebook/Graph/Dinic.h) (./Codebook/Math/Numbers.tex
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 15.
+
+) (./Codebook/Math/ExtendGCD.h) (./Codebook/Math/InvGCD.h) [8]
+(./Codebook/Math/GeneratingFunctions.tex) (./Codebook/Math/Theorem.tex
+
+LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/it' undefined
+(Font)              using `TU/timesnewroman.ttf(0)/m/n' instead on input line 2
+6.
+
+Missing character: There is no ő (U+0151) in font [fonts/times new roman.ttf]/O
+T:language=dflt;mapping=tex-text;!
+Missing character: There is no ö (U+00F6) in font [fonts/times new roman.ttf]/O
+T:language=dflt;mapping=tex-text;!
+) (./Codebook/Math/FloorSum.h) (./Codebook/Math/Factorizer.h [9])
+(./Codebook/Math/PowMod.h) (./Codebook/Math/CRT.h)
+(./Codebook/Math/DiscreteLog.h) (./Codebook/Math/LinearSieve.h)
+(./Codebook/Misc/FastIO.h [10]) (./Codebook/Misc/Debug.h)
+(./Codebook/Misc/Discrete.h) (./Codebook/Misc/DuiPai.h)
+(./Codebook/Misc/Timer.h) (./Codebook/Misc/TenarySearch.h)
+(./Codebook/Other/TouristIO.h [11]) (./Codebook/Setup/Template.h) [12]
+(./Codebook/String/DynamicKMP.h) (./Codebook/String/RollingHash.h)
+(./Codebook/String/SuffixArray.h [13]) (./Codebook/String/Trie.h)) [14]
+
+LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/sc' undefined
+(Font)              using `TU/timesnewroman.ttf(0)/m/n' instead on input line 3
+5.
+
+(./Codebook.toc)
+\tf@toc=\write3
+\openout3 = `Codebook.toc'.
+
+ [15] (./judge-test/cpp-test.tex) [16
+
+] (./Codebook.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 12267 strings out of 476683
+ 269259 string characters out of 5795226
+ 2970018 words of memory out of 5000000
+ 32185 multiletter control sequences out of 15000+600000
+ 514776 words of font info for 71 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 77i,12n,80p,459b,2224s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on Codebook.pdf (16 pages).
