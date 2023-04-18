@@ -8,6 +8,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 splitter = '\\' if sys.platform == "win32" else '/'
 
 RequireOptionDict = {
+	".hpp": "includecpp",
 	".h": "includecpp",
     ".cpp": "includecpp",
     ".py": "includepy",
