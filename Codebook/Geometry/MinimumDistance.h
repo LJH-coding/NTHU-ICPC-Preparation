@@ -2,8 +2,10 @@ template<class T>
 T MinimumDistance(vector<Point<T>>&p,int l = -1,int r = -1){
 	if(l==-1 and r==-1){
 		sort(p.begin(),p.end(),[](Point<T> a,Point<T> b){
-			return a.x<b.x;
+			if(a.x!=b.x)return a.x<b.x;
+			return a.y<b.y;
 		});
+		p.erase(unique(p.begin(),p.end()),p.end());
 		return MinimumDistance(p,0,p.size()-1);
 	}
 	if(l==r)return numeric_limits<T>::max();
@@ -14,7 +16,7 @@ T MinimumDistance(vector<Point<T>>&p,int l = -1,int r = -1){
 	for(int i = l;i<=r;++i)p[i] = tmp[i-l];
 	tmp.clear();
 	for(int i = l;i<=r;++i){
-		if(abs(p[i].x-mid_pos)<=ans){
+		if((p[i].x-mid_pos)*(p[i].x-mid_pos)<ans){
 			tmp.push_back(p[i]);
 		}
 	}
