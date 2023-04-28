@@ -8,7 +8,7 @@ template<class S,
 struct Treap{
 	struct node{
 		node *l = NULL,*r = NULL,*p = NULL;
-		int pri = rand(),sz = 1;
+		int pri = mt(),sz = 1;
 		S info;
 		T tag = tag_init();
 		bool rev;
@@ -117,6 +117,24 @@ struct Treap{
 		split(b, (bst? r : r - l + 1), b, c, bst);
 		if(b)b->all_apply(tag_init(), 1);
 		root = merge(a, merge(b, c));
+	}
+	S* find_next(long long k){
+		node *a, *b, *c;
+		split(root, k - 1, a, b, 1);
+		split(b, 1, b, c, 0);
+		S* ans = NULL;
+		if(b)ans = &b->info;
+		root = merge(a, merge(b, c));
+		return ans;
+	}
+	S* find_prev(long long k){
+		node *a, *b, *c;
+		split(root, k , a, b, 1);
+		split(a, size(a) - 1, a, c, 0);
+		S* ans = NULL;
+		if(c)ans = &c->info;
+		root = merge(merge(a, c), b);
+		return ans;
 	}
 	S query(long long l,long long r,bool bst = 0){
 		node *a, *b, *c;
