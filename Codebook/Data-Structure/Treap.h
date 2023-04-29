@@ -118,6 +118,13 @@ struct Treap{
 		if(b)b->all_apply(tag_init(), 1);
 		root = merge(a, merge(b, c));
 	}
+	int rank(long long k){
+		node *a, *b;
+		split(root, k - 1, a, b, 1);
+		int ans = size(a);
+		root = merge(a, b);
+		return ans;
+	}
 	S* find_next(long long k){
 		node *a, *b, *c;
 		split(root, k - 1, a, b, 1);
