@@ -1,6 +1,7 @@
 #include <bits/extc++.h>
 #include <bits/stdc++.h>
-#pragma gcc optimize("ofast, unroll-loops, no-stack-protector, fast-math")
+#pragma GCC optimize("O3,unroll-loops")
+#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 #define IOS ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 #define int long long
 #define double long double
@@ -28,7 +29,6 @@ template <typename K, typename M = null_type> using _hash = gp_hash_table<K, M>;
 const int N = 1e6+5,L = 20,mod = 1e9+7;
 const long long inf = 2e18+5;
 const double eps = 1e-7,pi = acos(-1);
-mt19937 mt(std::chrono::system_clock::now().time_since_epoch().count());
 void solve(){
 }
 signed main(){
