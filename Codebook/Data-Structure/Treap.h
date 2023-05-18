@@ -1,6 +1,6 @@
 template<class S,
 		S (*node_pull)(S, S),
-		S (*node_init)(S), 
+		S (*node_init)(S),
 		class T,
 		S (*mapping)(S, T),
 		T (*tag_pull)(T, T),
@@ -8,7 +8,8 @@ template<class S,
 struct Treap{
 	struct node{
 		node *l = NULL,*r = NULL,*p = NULL;
-		int pri = mt(),sz = 1;
+		const int pri = rand();
+		int sz = 1;
 		S info;
 		T tag = tag_init();
 		bool rev;
@@ -65,7 +66,7 @@ struct Treap{
 			return b;
 		}
 	}
-	void split(node *t, long long k, node *&a, node *&b, bool bst){
+	void split(node *t, long long k, node *&a, node *&b, const bool &bst){
 		if(!t){a = b = NULL;return;}
 		t->push();
 		if((bst==0 and size(t->l)+1<=k) or (bst==1 and t->info.key<=k)){
@@ -104,20 +105,6 @@ struct Treap{
 		root = merge(a, merge(b, c));
 		return ans;
 	}
-	void update(long long l,long long r,T t,bool bst = 0){
-		node *a, *b, *c;
-		split(root, (bst? l - 1 : l), a, b, bst);
-		split(b, (bst? r : r - l + 1), b, c, bst);
-		if(b)b->all_apply(t, 0);
-		root = merge(a, merge(b, c));
-	}
-	void reverse(long long l,long long r,bool bst = 0){
-		node *a, *b, *c;
-		split(root, (bst? l - 1 : l), a, b, bst);
-		split(b, (bst? r : r - l + 1), b, c, bst);
-		if(b)b->all_apply(tag_init(), 1);
-		root = merge(a, merge(b, c));
-	}
 	int rank(long long k){
 		node *a, *b;
 		split(root, k - 1, a, b, 1);
@@ -143,12 +130,26 @@ struct Treap{
 		root = merge(merge(a, c), b);
 		return ans;
 	}
+	void update(long long l,long long r,T t,bool bst = 0){
+		node *a, *b, *c;
+		split(root, (bst? l - 1 : l), a, b, bst);
+		split(b, (bst? r : r - l + 1), b, c, bst);
+		if(b)b->all_apply(t, 0);
+		root = merge(a, merge(b, c));
+	}
+	void reverse(long long l,long long r,bool bst = 0){
+		node *a, *b, *c;
+		split(root, (bst? l - 1 : l), a, b, bst);
+		split(b, (bst? r : r - l + 1), b, c, bst);
+		if(b)b->all_apply(tag_init(), 1);
+		root = merge(a, merge(b, c));
+	}
 	S query(long long l,long long r,bool bst = 0){
 		node *a, *b, *c;
 		split(root, (bst? l - 1 : l), a, b, bst);
 		split(b, (bst? r : r - l + 1), b, c, bst);
-		assert(b!=NULL);
-		S ans = b->info;
+		S ans;
+		if(b)ans = b->info;
 		root = merge(a, merge(b, c));
 		return  ans;
 	}
