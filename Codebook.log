@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Homebrew) (preloaded format=xelatex 2023.3.21)  13 MAY 2023 09:10
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Homebrew) (preloaded format=xelatex 2023.3.21)  25 MAY 2023 09:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -798,8 +798,8 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (./Codebook/Math/Theorem.tex
 
 LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/it' undefined
-(Font)              using `TU/timesnewroman.ttf(0)/m/n' instead on input line 2
-6.
+(Font)              using `TU/timesnewroman.ttf(0)/m/n' instead on input line 3
+7.
 
 Missing character: There is no ő (U+0151) in font [fonts/times new roman.ttf]/O
 T:language=dflt;mapping=tex-text;!
@@ -807,13 +807,13 @@ Missing character: There is no ö (U+00F6) in font [fonts/times new roman.ttf]/O
 T:language=dflt;mapping=tex-text;!
 ) (./Codebook/Math/FloorSum.h [11]) (./Codebook/Math/Factorizer.h)
 (./Codebook/Math/PowMod.h) (./Codebook/Math/CRT.h)
-(./Codebook/Math/DiscreteLog.h) (./Codebook/Math/LinearSieve.h [12])
+(./Codebook/Math/DiscreteLog.h [12]) (./Codebook/Math/LinearSieve.h)
 (./Codebook/Misc/FastIO.h) (./Codebook/Misc/Debug.h)
 (./Codebook/Misc/Discrete.h) (./Codebook/Misc/DuiPai.h)
-(./Codebook/Misc/Timer.h) (./Codebook/Misc/TenarySearch.h) [13]
+(./Codebook/Misc/Timer.h [13]) (./Codebook/Misc/TenarySearch.h)
 (./Codebook/Other/TouristIO.h [14]) (./Codebook/Setup/Template.h)
 (./Codebook/String/DynamicKMP.h) (./Codebook/String/RollingHash.h [15])
-(./Codebook/String/SuffixArray.h) (./Codebook/String/Trie.h)) [16]
+(./Codebook/String/SuffixArray.h) (./Codebook/String/Trie.h [16])) [17]
 
 LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/sc' undefined
 (Font)              using `TU/timesnewroman.ttf(0)/m/n' instead on input line 3
@@ -823,7 +823,7 @@ LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/sc' undefined
 \tf@toc=\write3
 \openout3 = `Codebook.toc'.
 
- [17] (./judge-test/cpp-test.tex) [18
+ [18] (./judge-test/cpp-test.tex) [19
 
 ] (./Codebook.aux)
 
@@ -831,12 +831,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 12376 strings out of 476683
- 271004 string characters out of 5795226
+ 12374 strings out of 476683
+ 271034 string characters out of 5795226
  3052018 words of memory out of 5000000
- 32282 multiletter control sequences out of 15000+600000
+ 32280 multiletter control sequences out of 15000+600000
  514776 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 77i,12n,80p,1168b,2238s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,12n,80p,1168b,2246s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Codebook.pdf (18 pages).
+Output written on Codebook.pdf (19 pages).
