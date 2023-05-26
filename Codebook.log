@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Homebrew) (preloaded format=xelatex 2023.3.21)  26 MAY 2023 20:16
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Homebrew) (preloaded format=xelatex 2023.3.21)  27 MAY 2023 00:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -762,21 +762,20 @@ File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 (./Codebook/CSES/LongestPalindrome.h) (./Codebook/CSES/DistinctSubstrings.h
 [2]) (./Codebook/CSES/BracketSequencesII.h [3] [4] [5])
 (./Codebook/CSES/CountingNumbers.h [6]) (./Codebook/CSES/WordCombinations.h)
-(./Codebook/CSES/SumOfDivisors.h) (./Codebook/CSES/RemovalGame.h)
-(./Codebook/CSES/MinimalRotation.h [7]) (./Codebook/CSES/Dice.h)
-(./Codebook/Data-Structure/Treap.h [8]) (./Codebook/Data-Structure/Segtree.h)
-[9] (./Codebook/Data-Structure/BinaryTrie.h)
-(./Codebook/Data-Structure/DsuUndo.h) (./Codebook/Data-Structure/DSU.h)
+(./Codebook/CSES/SumOfDivisors.h) (./Codebook/CSES/FindingPatterns.h [7])
+(./Codebook/CSES/RemovalGame.h) (./Codebook/CSES/MinimalRotation.h)
+(./Codebook/CSES/Dice.h [8]) (./Codebook/Data-Structure/Treap.h [9])
+(./Codebook/Data-Structure/Segtree.h) (./Codebook/Data-Structure/BinaryTrie.h)
+[10] (./Codebook/Data-Structure/DsuUndo.h) (./Codebook/Data-Structure/DSU.h)
 (./Codebook/Data-Structure/Fenwick.h)
-(./Codebook/Data-Structure/Persistent_DSU.h [10])
+(./Codebook/Data-Structure/Persistent_DSU.h)
 (./Codebook/Data-Structure/TimingSegtree.h)
-(./Codebook/Data-Structure/AreaOfRectangles.h)
+(./Codebook/Data-Structure/AreaOfRectangles.h [11])
 (./Codebook/Data-Structure/SparseTable.h) (./Codebook/Data-Structure/VEBTree.h
-[11]) (./Codebook/Data-Structure/DynamicSegtree.h)
-(./Codebook/Data-Structure/ZkwSegtree.h [12])
+[12]) (./Codebook/Data-Structure/DynamicSegtree.h)
+(./Codebook/Data-Structure/ZkwSegtree.h [13])
 (./Codebook/Data-Structure/MoAlgo.h) (./Codebook/Data-Structure/Hash.h)
-(./Codebook/Data-Structure/RedBlackTree.h [13])
-(./Codebook/Geometry/Theorem.tex
+(./Codebook/Data-Structure/RedBlackTree.h) (./Codebook/Geometry/Theorem.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 
 (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/amsfonts/umsa
@@ -790,21 +789,22 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )) (./Codebook/Geometry/PointInPolygon.h)
 (./Codebook/Geometry/PointInConvex.h) (./Codebook/Geometry/MaximumDistance.h)
-(./Codebook/Geometry/PolarAngleSort.h) (./Codebook/Geometry/MinimumDistance.h)
-(./Codebook/Geometry/ConvexHull.h) (./Codebook/Geometry/Template.h [14])
-(./Codebook/Graph/HLD.h) (./Codebook/Graph/Bridges.h)
-(./Codebook/Graph/TwoSat.h) (./Codebook/Graph/MCMF.h [15])
-(./Codebook/Graph/LCA.h) (./Codebook/Graph/CentroidDecomposition.h) [16]
-(./Codebook/Graph/BCC_AP.h) (./Codebook/Graph/SCC.h)
-(./Codebook/Graph/LineContainer.h) [17] (./Codebook/Graph/Dinic.h)
-(./Codebook/Math/Numbers.tex
+(./Codebook/Geometry/PolarAngleSort.h) [14]
+(./Codebook/Geometry/MinimumDistance.h) (./Codebook/Geometry/ConvexHull.h)
+(./Codebook/Geometry/Template.h) (./Codebook/Graph/HLD.h [15])
+(./Codebook/Graph/Bridges.h) (./Codebook/Graph/TwoSat.h)
+(./Codebook/Graph/MCMF.h [16]) (./Codebook/Graph/LCA.h)
+(./Codebook/Graph/CentroidDecomposition.h) (./Codebook/Graph/BCC_AP.h)
+(./Codebook/Graph/SCC.h [17]) (./Codebook/Graph/LineContainer.h)
+(./Codebook/Graph/Dinic.h [18]) (./Codebook/Math/Numbers.tex
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 15.
 
 ) (./Codebook/Math/ExtendGCD.h) (./Codebook/Math/InvGCD.h)
-(./Codebook/Math/GeneratingFunctions.tex [18]) (./Codebook/Math/Theorem.tex
+(./Codebook/Math/GeneratingFunctions.tex) (./Codebook/Math/Primes.h)
+(./Codebook/Math/Theorem.tex
 
 LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/it' undefined
 (Font)              using `TU/timesnewroman.ttf(0)/m/n' instead on input line 3
@@ -812,17 +812,19 @@ LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/it' undefined
 
 Missing character: There is no ő (U+0151) in font [fonts/times new roman.ttf]/O
 T:language=dflt;mapping=tex-text;!
+[19]
 Missing character: There is no ö (U+00F6) in font [fonts/times new roman.ttf]/O
 T:language=dflt;mapping=tex-text;!
-) (./Codebook/Math/FloorSum.h) (./Codebook/Math/GuessKth.h [19])
-(./Codebook/Math/PowMod.h) (./Codebook/Math/ModInt.h) (./Codebook/Math/CRT.h)
-(./Codebook/Math/DiscreteLog.h [20]) (./Codebook/Math/LinearSieve.h)
-(./Codebook/Misc/FastIO.h [21]) (./Codebook/Misc/Debug.h)
-(./Codebook/Misc/Discrete.h) (./Codebook/Misc/DuiPai.h)
-(./Codebook/Misc/Timer.h) (./Codebook/Misc/TenarySearch.h)
-(./Codebook/Setup/Template.h [22]) (./Codebook/String/RollingHash.h)
-(./Codebook/String/Z.h) (./Codebook/String/KMP.h) [23]
-(./Codebook/String/SuffixArray.h) (./Codebook/String/Trie.h)) [24]
+) (./Codebook/Math/FloorSum.h) (./Codebook/Math/GuessKth.h)
+(./Codebook/Math/PowMod.h) [20] (./Codebook/Math/ModInt.h)
+(./Codebook/Math/CRT.h) (./Codebook/Math/DiscreteLog.h [21])
+(./Codebook/Math/LinearSieve.h) (./Codebook/Misc/FastIO.h)
+(./Codebook/Misc/Debug.h) [22] (./Codebook/Misc/Discrete.h)
+(./Codebook/Misc/DuiPai.h) (./Codebook/Misc/Timer.h)
+(./Codebook/Misc/TenarySearch.h) (./Codebook/Setup/vimrc.h)
+(./Codebook/Setup/Template.h) (./Codebook/String/RollingHash.h [23])
+(./Codebook/String/Z.h) (./Codebook/String/KMP.h)
+(./Codebook/String/SuffixArray.h) [24] (./Codebook/String/Trie.h)) [25]
 
 LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/sc' undefined
 (Font)              using `TU/timesnewroman.ttf(0)/m/n' instead on input line 3
@@ -832,10 +834,10 @@ LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/sc' undefined
 \tf@toc=\write3
 \openout3 = `Codebook.toc'.
 
- [25]
+ [26]
 File: cover.jpeg Graphic file (type bmp)
 <cover.jpeg>
- (./judge-test/cpp-test.tex) [26
+ (./judge-test/cpp-test.tex) [27
 
 ] (./Codebook.aux)
 
@@ -843,12 +845,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 12592 strings out of 476683
- 275542 string characters out of 5795226
- 3023018 words of memory out of 5000000
- 32447 multiletter control sequences out of 15000+600000
+ 12679 strings out of 476683
+ 276562 string characters out of 5795226
+ 3005018 words of memory out of 5000000
+ 32525 multiletter control sequences out of 15000+600000
  514776 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 77i,12n,80p,1168b,2284s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,12n,80p,1168b,2306s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Codebook.pdf (26 pages).
+Output written on Codebook.pdf (27 pages).
