@@ -1,39 +1,19 @@
-// @param $n < 2^{32}$
-// @param $1 \leq m < 2^{32}$
-// @return $\sum_{i=0}^{n-1} \lfloor \frac{ai + b}{m} \rfloor \pmod{2^{64}}$
-ull floor_sum_unsigned(ull n, ull m, ull a, ull b) {
-	ull ans = 0;
-	while(true) {
-		if(a >= m) {
-			ans += n * (n - 1) / 2 * (a / m);
-			a %= m;
-		}
-		if(b >= m) {
-			ans += n * (b / m);
-			b %= m;
-		}
-		ull y_max = a * n + b;
-		if(y_max < m) break;
-		n = (ull)(y_max / m);
-		b = (ull)(y_max % m);
-		swap(m, a);
+//f(a, b, c, n) = \sum_{i = 0}^{n - 1} \lfloor \frac{ai + b}{c}\rfloor
+long long floor_sum(long long a, long long b, long long c, long long n) {
+	long long ans = 0;
+	if(a >= c) {
+		ans += (n - 1) * n * (a / c) / 2;
+		a %= c;
 	}
-	return ans;
-}
-
-ll floor_sum(ll n, ll m, ll a, ll b) {
-	assert(0 <= n && n < (1LL << 32));
-	assert(1 <= m && m < (1LL << 32));
-	ull ans = 0;
-	if(a < 0) {
-		ull a2 = (a % m + m) % m;
-		ans -= 1ULL * n * (n - 1) / 2 * ((a2 - a) / m);
-		a = a2;
+	if(b >= c) {
+		ans += n * (b / c);
+		b %= c;
 	}
-	if(b < 0) {
-		ull b2 = (b % m + m) % m;
-		ans -= 1ULL * n * ((b2 - b) / m);
-		b = b2;
+	long long y_max = (a * n + b) / c;
+	long long x_max = y_max * c - b;
+	if(y_max == 0) {
+		return ans;
 	}
-	return ans + floor_sum_unsigned(n, m, a, b);
+	ans += (n - (x_max + a - 1) / a) * y_max;
+	return ans + floor_sum(c, (a - x_max % a) % a, a, y_max);
 }

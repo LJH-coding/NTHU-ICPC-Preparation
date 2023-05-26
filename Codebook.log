@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Homebrew) (preloaded format=xelatex 2023.3.21)  25 MAY 2023 09:27
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Homebrew) (preloaded format=xelatex 2023.3.21)  26 MAY 2023 13:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -793,9 +793,9 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 15.
 
-) (./Codebook/Math/ExtendGCD.h) (./Codebook/Math/BerlekampMassey.h [10])
+) (./Codebook/Math/ExtendGCD.h) (./Codebook/Math/list.tex)
 (./Codebook/Math/InvGCD.h) (./Codebook/Math/GeneratingFunctions.tex)
-(./Codebook/Math/Theorem.tex
+(./Codebook/Math/Theorem.tex [10]
 
 LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/it' undefined
 (Font)              using `TU/timesnewroman.ttf(0)/m/n' instead on input line 3
@@ -805,15 +805,16 @@ Missing character: There is no ő (U+0151) in font [fonts/times new roman.ttf]/O
 T:language=dflt;mapping=tex-text;!
 Missing character: There is no ö (U+00F6) in font [fonts/times new roman.ttf]/O
 T:language=dflt;mapping=tex-text;!
-) (./Codebook/Math/FloorSum.h [11]) (./Codebook/Math/Factorizer.h)
-(./Codebook/Math/PowMod.h) (./Codebook/Math/CRT.h)
-(./Codebook/Math/DiscreteLog.h [12]) (./Codebook/Math/LinearSieve.h)
+) (./Codebook/Math/FloorSum.h) (./Codebook/Math/Factorizer.h)
+(./Codebook/Math/GuessKth.h [11]) (./Codebook/Math/PowMod.h)
+(./Codebook/Math/ModInt.h [12]) (./Codebook/Math/CRT.h)
+(./Codebook/Math/DiscreteLog.h [13]) (./Codebook/Math/LinearSieve.h)
 (./Codebook/Misc/FastIO.h) (./Codebook/Misc/Debug.h)
-(./Codebook/Misc/Discrete.h) (./Codebook/Misc/DuiPai.h)
-(./Codebook/Misc/Timer.h [13]) (./Codebook/Misc/TenarySearch.h)
-(./Codebook/Other/TouristIO.h [14]) (./Codebook/Setup/Template.h)
-(./Codebook/String/DynamicKMP.h) (./Codebook/String/RollingHash.h [15])
-(./Codebook/String/SuffixArray.h) (./Codebook/String/Trie.h [16])) [17]
+(./Codebook/Misc/Discrete.h) (./Codebook/Misc/DuiPai.h [14])
+(./Codebook/Misc/Timer.h) (./Codebook/Misc/TenarySearch.h)
+(./Codebook/Other/TouristIO.h [15]) (./Codebook/Setup/Template.h)
+(./Codebook/String/DynamicKMP.h) (./Codebook/String/RollingHash.h [16])
+(./Codebook/String/SuffixArray.h) (./Codebook/String/Trie.h [17])) [18]
 
 LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/sc' undefined
 (Font)              using `TU/timesnewroman.ttf(0)/m/n' instead on input line 3
@@ -823,7 +824,7 @@ LaTeX Font Warning: Font shape `TU/timesnewroman.ttf(0)/m/sc' undefined
 \tf@toc=\write3
 \openout3 = `Codebook.toc'.
 
- [18] (./judge-test/cpp-test.tex) [19
+ [19] (./judge-test/cpp-test.tex) [20
 
 ] (./Codebook.aux)
 
@@ -831,12 +832,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 12374 strings out of 476683
- 271034 string characters out of 5795226
+ 12424 strings out of 476683
+ 271702 string characters out of 5795226
  3052018 words of memory out of 5000000
- 32280 multiletter control sequences out of 15000+600000
+ 32325 multiletter control sequences out of 15000+600000
  514776 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 77i,12n,80p,1168b,2246s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,12n,80p,1168b,2255s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Codebook.pdf (19 pages).
+Output written on Codebook.pdf (20 pages).

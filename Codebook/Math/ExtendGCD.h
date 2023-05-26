@@ -1,4 +1,5 @@
 // @return $x, y$ s.t. $ax + by = \gcd(a, b)$
+#define ll long long
 ll ext_gcd(ll a, ll b, ll& x, ll& y) {
 	if(b == 0) {
 		x = 1; y = 0;
@@ -12,3 +13,4 @@ ll ext_gcd(ll a, ll b, ll& x, ll& y) {
 	y = x2 - (a / b) * y2;
 	return g;
 }
+//a^{-1} % p = x % p
