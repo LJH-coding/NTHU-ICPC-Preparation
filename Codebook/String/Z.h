@@ -1,4 +1,4 @@
-
+//z[i] := LCP(s, s[i, n)), z[0] is dont care
 template<class T>
 vector<int> Z(const vector<T>& a) {
 	int n = (int) a.size();
