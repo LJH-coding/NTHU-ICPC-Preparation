@@ -1,4 +1,3 @@
-#line 2 "library/string/kmp.hpp"
 template<class T>
 vector<int> KMP(const vector<T>& a) {
 	int n = (int) a.size();
