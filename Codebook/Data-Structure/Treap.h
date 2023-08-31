@@ -1,156 +1,118 @@
 template<class S,
 		S (*node_pull)(S, S),
-		S (*node_init)(S),
+		S (*node_init)(),
 		class T,
-		S (*mapping)(S, T),
+		S (*mapping)(S, pair<T, bool>),
 		T (*tag_pull)(T, T),
 		T (*tag_init)()>
-struct Treap{
-	struct node{
-		node *l = NULL,*r = NULL,*p = NULL;
-		const int pri = rand();
-		int sz = 1;
-		S info;
-		T tag = tag_init();
-		bool rev;
-		node(S k) : info(k){}
-		~node(){
-			for(auto &i:{l,r})
-				delete i;
-		}
-		void all_apply(T t,bool is_rev){
-			if(is_rev){
-				swap(l,r);
-				rev^=1;
-			}
-			info = mapping(info, t);
-			tag = tag_pull(tag, t);
-		}
-		void push(){
-			for(auto &i:{l,r})
-				if(i)i->all_apply(tag, rev);
-			tag = tag_init();
-			rev = 0;
-		}
-		void pull(){
-			sz = 1,info = node_init(info);
-			for(auto &i:{l,r}){
-				if(i){
-					sz+=i->sz,i->p = this;
-					info = node_pull(info,i->info);
-				}
-			}
-		}
-	};
-	node *root = NULL;
-	int size(node *a){
-		return a?a->sz:0;
-	}
-	int size(){
-		return size(root);
-	}
-	node *merge(node *a,node *b){
-		if(!a or !b)return a?:b;
-		if(a->pri>b->pri){
-			a->push();
-			a->r = merge(a->r,b);
-			a->r->p = a;
-			a->pull();
-			return a;
-		}
-		else{
-			b->push();
-			b->l = merge(a,b->l);
-			b->l->p = b;
-			b->pull();
-			return b;
-		}
-	}
-	void split(node *t, long long k, node *&a, node *&b, const bool &bst){
-		if(!t){a = b = NULL;return;}
-		t->push();
-		if((bst==0 and size(t->l)+1<=k) or (bst==1 and t->info.key<=k)){
-			a = t;
-			split(t->r, ( bst ? k : k - size(t->l) - 1 ), a->r, b, bst);
-			if(b)b->p = NULL;
-			a->pull();
-		}
-		else{
-			b = t;
-			split(t->l, k, a, b->l, bst);
-			if(a)a->p = NULL;
-			b->pull();
-		}
-	}
-	node *insert(long long idx, S x,bool bst = 0){
-		node *a,*b;
-		split(root, idx, a, b, bst);
-		node *tmp = new node(x);
-		root = merge(a, merge(tmp, b));
-		return tmp;
-	}
-	void erase(long long l,long long r,bool bst = 0){
-		node *a,*b,*c;
-		split(root, (bst? l-1 : l), a, b, bst);
-		split(b, (bst? r : r - l + 1), b, c, bst);
-		delete b;
-		root = merge(a,c);
-	}
-	S operator [](int x){
-		node *a, *b, *c;
-		split(root, x, a, b, 0);
-		split(b, 1, b, c, 0);
-		assert(b!=NULL);
-		S ans = b->info;
-		root = merge(a, merge(b, c));
-		return ans;
-	}
-	int rank(long long k){
-		node *a, *b;
-		split(root, k - 1, a, b, 1);
-		int ans = size(a);
-		root = merge(a, b);
-		return ans;
-	}
-	S* find_next(long long k){
-		node *a, *b, *c;
-		split(root, k - 1, a, b, 1);
-		split(b, 1, b, c, 0);
-		S* ans = NULL;
-		if(b)ans = &b->info;
-		root = merge(a, merge(b, c));
-		return ans;
-	}
-	S* find_prev(long long k){
-		node *a, *b, *c;
-		split(root, k , a, b, 1);
-		split(a, size(a) - 1, a, c, 0);
-		S* ans = NULL;
-		if(c)ans = &c->info;
-		root = merge(merge(a, c), b);
-		return ans;
-	}
-	void update(long long l,long long r,T t,bool bst = 0){
-		node *a, *b, *c;
-		split(root, (bst? l - 1 : l), a, b, bst);
-		split(b, (bst? r : r - l + 1), b, c, bst);
-		if(b)b->all_apply(t, 0);
-		root = merge(a, merge(b, c));
-	}
-	void reverse(long long l,long long r,bool bst = 0){
-		node *a, *b, *c;
-		split(root, (bst? l - 1 : l), a, b, bst);
-		split(b, (bst? r : r - l + 1), b, c, bst);
-		if(b)b->all_apply(tag_init(), 1);
-		root = merge(a, merge(b, c));
-	}
-	S query(long long l,long long r,bool bst = 0){
-		node *a, *b, *c;
-		split(root, (bst? l - 1 : l), a, b, bst);
-		split(b, (bst? r : r - l + 1), b, c, bst);
-		S ans;
-		if(b)ans = b->info;
-		root = merge(a, merge(b, c));
-		return  ans;
-	}
+struct Treap {
+    struct node {
+        node *l = NULL, *r = NULL, *p = NULL;
+        const int pri = rand();
+        int sz = 1;
+        S key, ans;
+        pair<T, bool> tag = {tag_init(), false};
+        node(S k) : key(k), ans(k) {}
+        void all_apply(pair<T, bool> t) {
+            key = mapping(key, t);
+            ans = mapping(ans, t);
+            tag.second ^= t.second;
+            tag.first = tag_pull(tag.first, t.first);
+        }
+        void push() {
+            for(auto &i : {l,r})
+                if(i) i->all_apply(tag);
+            tag = {tag_init(), false};
+        }
+        void pull() {
+            sz = 1, ans = key;
+            if(l) sz += l->sz, l->p = this, ans = node_pull(l->ans, ans);
+            if(r) sz += r->sz, r->p = this, ans = node_pull(ans, r->ans);
+        }
+    };
+    int size(node *t) {
+        return t ? t->sz : 0;
+    }
+    node *merge(node *a, node *b) {
+        if(!a or !b) return a ? : b;
+        if(a->pri>b->pri) {
+            a->push();
+            a->r = merge(a->r, b);
+            a->r->p = a;
+            a->pull();
+            return a;
+        }
+        else {
+            b->push();
+            b->l = merge(a, b->l);
+            b->l->p = b;
+            b->pull();
+            return b;
+        }
+    }
+    void split_by_size(node *t, int k, node *&a, node *&b) {
+        if(!t) {a = b = NULL; return;}
+        t->push();
+        if(size(t->l)+1<=k) {
+            a = t;
+            split_by_size(t->r, k - size(t->l) - 1 , a->r, b);
+            if(b) b->p = NULL;
+            a->pull();
+        }
+        else {
+            b = t;
+            split_by_size(t->l, k, a, b->l);
+            if(a) a->p = NULL;
+            b->pull();
+        }
+    }
+    int find_next(node *t, S k) {
+        if(!t)return 0;
+        t->push();
+        if(t->key < k) return size(t->l) + 1 + find_next(t->r, k);
+        return find_next(t->l, k);
+    }
+    int find_prev(node *t, S k) {
+        int pos = find_next(t, k);
+        return pos - (pos >= this->size() || (*this)[pos] > k);
+    }
+    node *root;
+    Treap(S s) : root(new node(s)) {}
+    Treap(node *t = NULL) : root(t) {}
+    tuple<Treap, Treap, Treap> split(int l, int r) {
+        node *a, *b, *c;
+        split_by_size(root, l, a, b);
+        split_by_size(b, r - l + 1, b, c);
+        root = NULL;
+        return {a, b, c};
+    }
+    void merge(Treap &a) {
+        root = merge(root, a.root);
+        a.root = NULL;
+    }
+    void update(T t, bool rev) {
+        root->all_apply({t, rev});
+    }
+    pair<S, S> query() {
+        if(!root)return {node_init(), node_init()};
+        root->push();
+        return {root->key, root->ans};
+    }
+    S operator[](int pos) {
+        auto [x, y, z] = split(pos, pos);
+        S res = y.query().first;
+        root = merge(x.root, merge(y.root, z.root));
+        return res;
+    }
+    int size() {
+        return size(root);
+    }
+    void clear(){
+        auto dfs = [&](auto dfs, node *now) -> void {
+            if(now->l)dfs(dfs, now->l);
+            if(now->r)dfs(dfs, now->r);
+            delete(now);
+        };
+        dfs(dfs, root);
+    }
 };
