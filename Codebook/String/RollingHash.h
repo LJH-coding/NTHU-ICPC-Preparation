@@ -24,6 +24,14 @@ struct rolling_hash {
 		return power[a][b];
 	}
 
+    void add_char(char c) {
+        for(int i = 0; i < n; ++i) {
+            const auto& p = HASH_PAIRS[i];
+            pref[i].push_back((1LL * (n == 0 ? 0 : pref[i].back()) * p.first + c) % p.second);
+        }
+        n += 1;
+    }
+
 	rolling_hash(T s = "") : n(s.size()) {
 		for(int i = 0; i < cnt; ++i) {
 			const auto& p = hash_pair[i];
